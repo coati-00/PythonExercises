@@ -1,0 +1,3 @@
+http://engineroom.trackmaven.com/blog/making-a-mockery-of-python/
+http://engineroom.trackmaven.com/blog/real-life-mocking/
+http://engineroom.trackmaven.com/blog/mocking-mistakes/
