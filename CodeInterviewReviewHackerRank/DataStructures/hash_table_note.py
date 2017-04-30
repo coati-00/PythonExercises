@@ -7,6 +7,12 @@ def ransom_note(magazine, ransom):
     cannot be done'''
     
     for word in ransom:
+        if word in magazine:
+            print magazine
+            rmword = magazine.index(word)
+            del magazine[rmword]
+            #magazine = magazine.pop(rmword)
+            print magazine
         if word not in magazine:
             print "word " + word + " missing from magazine" 
             return False
