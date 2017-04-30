@@ -19,20 +19,23 @@ def compare_letters_for_anagrams(str1, str2):
     '''given two strings determine if they are anagrams'''
     temp_alph1 = get_letter_count(str1)
     temp_alph2 = get_letter_count(str2)
-    
-    if len(temp_alph1.keys()) != len(temp_alph2.keys()):
-        print "not anagams"
-        return False
 
     for each in temp_alph1.keys():
         if each in temp_alph2.keys():
             if temp_alph1[each] != temp_alph2[each]:
-                print temp_alph1[each], temp_alph2[each]
-                print "not anagram"
-                return False
+                print each, temp_alph1[each], each, temp_alph2[each]
         elif each not in temp_alph2.keys():
-            print "not anagram"
-            return False
+            print "key in list one not in list two"
+            print each, temp_alph1[each]
+    
+    for each in temp_alph2.keys():
+        if each in temp_alph1.keys():
+            if temp_alph2[each] != temp_alph1[each]:
+                print each, temp_alph1[each], each, temp_alph2[each]
+        elif each not in temp_alph1.keys():
+            print "key in list two not in list one"
+            print each, temp_alph2[each]
+
     # if we get to this point in the code --> they are anagrams
     print "are anagrams"
     return True
