@@ -1,11 +1,9 @@
 def ransom_note(magazine, ransom):
     '''determine if ransom note can be constructed from words in magazine'''
-    # ransom_words = ransom.split()
-    # magazine_words = magazine.split()
     if len(ransom) > len(magazine):
         print "note is longer than magazine list"
         return False
-    '''if there are more words in the ransome note than the magazine,
+    '''if there are more words in the ransom note than the magazine,
     cannot be done'''
     
     for word in ransom:
