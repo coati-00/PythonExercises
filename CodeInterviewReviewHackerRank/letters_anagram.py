@@ -25,7 +25,7 @@ def compare_letters_for_anagrams(str1, str2):
             if temp_alph1[each] != temp_alph2[each]:
                 print each, temp_alph1[each], each, temp_alph2[each]
         elif each not in temp_alph2.keys():
-            print "key in list one not in list two"
+            print "key in list one " + str1 + " not in list two " + str2
             print each, temp_alph1[each]
     
     for each in temp_alph2.keys():
@@ -33,14 +33,8 @@ def compare_letters_for_anagrams(str1, str2):
             if temp_alph2[each] != temp_alph1[each]:
                 print each, temp_alph1[each], each, temp_alph2[each]
         elif each not in temp_alph1.keys():
-            print "key in list two not in list one"
+            print "key in list two " + str1 + " not in list one " + str2
             print each, temp_alph2[each]
-
-    # if we get to this point in the code --> they are anagrams
-    print "are anagrams"
-    return True
-         
-            
     
 
 teststr1 = "abcd"
