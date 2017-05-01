@@ -5,6 +5,7 @@ https://www.hackerrank.com/challenges/ctci-array-left-rotation
 '''
 
 def rotate_one_left(a, n):
+    '''rotate entire array left by one'''
     new_array = []
     temp = a[0]
     counter = 1
@@ -15,6 +16,8 @@ def rotate_one_left(a, n):
     return new_array
 
 def array_left_rotation(a, n, k):
+    '''use method declared earlier to move the array left one iteration
+    at a time for the specified number of turns'''
     counter = 0
     new_array = a
     while counter < k:
@@ -22,9 +25,29 @@ def array_left_rotation(a, n, k):
         counter = counter + 1
     return new_array
 
+def faster_array_left_rotation(a, n, k):
+    old_array = a
+    new_array = [0] * n
+    new_array_counter = 0
+    old_array_counter = 0
+    rotcounter = k
+    
+    while rotcounter < len(old_array):
+        new_array[new_array_counter] = old_array[rotcounter]
+        new_array_counter = new_array_counter + 1
+        rotcounter = rotcounter + 1
+    while old_array_counter < k:
+        new_array[new_array_counter] = old_array[old_array_counter]
+        new_array_counter = new_array_counter + 1
+        old_array_counter = old_array_counter + 1
+    return new_array
+
+    
+
 
 n, k = map(int, raw_input().strip().split(' '))
 a = map(int, raw_input().strip().split(' '))
 answer = array_left_rotation(a, n, k);
+alt_answer = faster_array_left_rotation(a, n, k);
 print ' '.join(map(str,answer))
 
