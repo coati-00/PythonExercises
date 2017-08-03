@@ -13,6 +13,13 @@ def count_elements(somestring):
             temp_elem[each] = 1
     return temp_elem
 
+def order_length(arr1, arr2):
+    first = {}
+    second = {}
+    if len(arr1) < len(arr2):
+        return arr1, arr2
+
+
 def get_same_elements_dict(arr1 , arr2):
     #go over shorter one first
     first = count_elements(arr1)
